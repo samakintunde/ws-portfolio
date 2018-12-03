@@ -24,7 +24,7 @@ a {
 }
 
 a:hover {
-  color: #cccccc;
+  color: #9a9ca0;
 }
 
 body {
@@ -92,16 +92,16 @@ main section.brands-container p {
 }
 
 main section.brands-container div.brands {
-  display: flex;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(calc(100% / 6), 1fr));
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
-  flex: 1 1 50%;
+  /* grid-gap: 1px; */
 }
 
-main section.brands-container div.brands img {
-  max-width: 100%;
-  margin: 1em 0;
+main section.brands-container div.brand {
+  margin: 1em auto;
 }
 
 footer {
@@ -128,7 +128,7 @@ footer section.contact div.lines span {
   border: 1px solid #ffffff;
 }
 
-footer section.contact div.lines span:nth-child(1) {
+footer section.contact div.lines span:first-child {
   width: 10%;
 }
 
@@ -138,16 +138,17 @@ footer section.contact div.lines span:last-child {
 
 footer section.social {
   margin: 5em 0;
+  display: flex;
+  justify-content: center;
 }
 
 footer section.social a {
-  display: flex;
-  /* position: relative;
+  position: relative;
   border: 2px solid #ffffff;
   border-radius: 50%;
-  width: 42px;
-  height: 42px;
-  margin: 0 1em; */
+  width: 2.5em;
+  height: 2.5em;
+  margin: 0 1em;
 }
 
 footer section.social a i {
@@ -159,6 +160,25 @@ footer section.social a i {
 }
 
 footer section.copyright p {
-  font-size: 1.125em;
+  font-size: 1em;
   color: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+  main section.brands-container div.brands {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+  }
+
+  .contact {
+    font-size: 12px;
+  }
+
+  footer section.social a {
+    margin: 0 0.5em;
+  }
+
+  footer section.social a i {
+    font-size: 1.25em;
+  }
 }
